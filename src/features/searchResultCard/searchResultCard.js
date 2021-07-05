@@ -12,7 +12,7 @@ export const SearchResultCard = (props) => {
                         <p className={styles.rating}>{props.rating}</p>
                         <i className="Fas Fa-Chevron-Circle-Down"/>
                     </div>
-                    <img class={styles.cardImage} src={props.src}/>
+                    <img className={styles.cardImage} src={props.src}/>
                 </div>
             </div>
         </div>
