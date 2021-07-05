@@ -1,0 +1,36 @@
+.srContainer {
+    max-width: 30vw;
+    padding: 10px;
+    margin-top: 10PX;
+}
+
+.title {
+    text-align: center;
+}
+
+.srContentOuterContainer {
+    display: flex;
+    
+}
+
+.srContentContainer {
+    display: flex;
+}
+
+.srRatingContainer {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating {
+    text-align: center;
+}
+
+.cardImage {
+    max-width: 25vw;
+    height: auto;
+    max-height: 40vh;
+    padding-left: 10px;
+}

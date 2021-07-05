@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import { SearchBar } from './features/searchBar/searchBar';
+import { SearchResults } from './features/searchResults/searchResults'
+import { Navbar } from './features/navbar/navbar';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          <p>Test</p>
-        </div>
-      </header>
+    <Navbar />    
+    <SearchBar />
+    <SearchResults />
     </div>
   );
 }
