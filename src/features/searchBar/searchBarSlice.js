@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchResults } from '../searchResults/searchResultsSlice'
 
 export const searchBarSlice = createSlice({
     name: 'searchBar',
