@@ -15,7 +15,7 @@ export const SearchResults = (props) => {
     return (
         <div className={styles.searchResultsContainer}>
             {fakeState.map(card => 
-                <SearchResultCard title={card.title} rating={card.rating} src={card.src} />
+                <SearchResultCard key={card.id} title={card.title} rating={card.rating} src={card.src} />
                 )}
         </div>
     )
