@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchResults } from '../searchResults/searchResultsSlice'
+
+
+//TODO: call fetchResults when state changes
 
 export const searchBarSlice = createSlice({
     name: 'searchBar',

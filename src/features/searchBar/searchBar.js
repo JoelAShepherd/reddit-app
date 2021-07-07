@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { updateSearchTerm } from './searchBarSlice';
 import { useDispatch } from 'react-redux'
+import { searchThunk } from '../searchResults/searchResultsSlice'
 
 export const SearchBar = () => {
 const [searchTerm, setSearchTerm] = useState('');
@@ -16,6 +17,7 @@ const handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch(updateSearchTerm(searchTerm))
+    dispatch(searchThunk(searchTerm))
 
     setSearchTerm('')
 }
