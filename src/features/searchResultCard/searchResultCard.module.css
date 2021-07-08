@@ -17,17 +17,6 @@
     display: flex;
 }
 
-.srRatingContainer {
-    width: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.rating {
-    text-align: center;
-}
-
 .cardImage {
     max-width: 25vw;
     height: auto;

@@ -1,0 +1,10 @@
+.srRatingContainer {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating {
+    text-align: center;
+}
