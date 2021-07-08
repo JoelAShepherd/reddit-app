@@ -1,20 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { reddit } from '../api/redditApi'
 
 
 
-const reddit = {async getSearch(query) {
-    try {
-        const response = await fetch(`https://www.reddit.com/search.json?q=${query}&limit=6`)
-        if (response.ok) {
-            const jsonResponse = await response.json();
-            const children = jsonResponse.data.children.map(child => child.data)
-            return children;
-        }
-        throw new Error('Reuqest Failed');
-    } catch(error) {
-        console.log(error)
-    }
-}}
 
 export const searchThunk =  createAsyncThunk(
     'searchResults/searchThunk',
@@ -29,7 +17,8 @@ export const searchResultsSlice = createSlice({
     name: "searchResults",
     initialState: {searchResults: {},
         resultsLoading: false,
-        resultsError: false
+        resultsError: false,
+        data: false
     },
     reducers: {},
     extraReducers: {
@@ -41,6 +30,7 @@ export const searchResultsSlice = createSlice({
             state.searchResults = action.payload;
             state.resultsLoading = false;
             state.resultsError = false;
+            state.data = true
         },
         [searchThunk.rejected]: (state, action) => {
             state.resultsLoading = false;
@@ -51,7 +41,8 @@ export const searchResultsSlice = createSlice({
 })
 
 
-export const { searchResultsSelector } = state => state.searchResults.searchResults;
+export const selectSearchResults = state => state.searchResults.searchResults;
+export const selectSearchResultState = state => state.searchResults;
 export default searchResultsSlice.reducer
 
 /*
