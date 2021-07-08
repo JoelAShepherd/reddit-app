@@ -1,10 +1,12 @@
 import styles from './searchResults.module.css'
 import { SearchResultCard } from '../searchResultCard/searchResultCard'
 import { selectSearchResults, selectSearchResultState } from './searchResultsSlice'
+import { selectSearchTerm } from '../searchBar/searchBarSlice'
 import { useSelector } from 'react-redux'
 
 export const SearchResults = (props) => {
 
+    const searchTerm = useSelector(selectSearchTerm)
     const searchResultsData = useSelector(selectSearchResults)
     const searchResultsState = useSelector(selectSearchResultState)
     const error = searchResultsState.resultsError;
@@ -14,6 +16,12 @@ export const SearchResults = (props) => {
 
     return (
         <div className={styles.searchResultsContainer}>
+            {hasData &&
+                <div className={styles.searchHeader}>
+                    <h2>{searchTerm}</h2>
+                    <p>search results</p>
+                </div>
+            }
             {hasData ? 
                 (searchResultsData.map((card, index) => 
                 <SearchResultCard 
