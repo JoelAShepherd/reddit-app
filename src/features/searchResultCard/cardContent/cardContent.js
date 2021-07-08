@@ -34,7 +34,9 @@ export const Content = props => {
 
     if (is_text){
     return(
-        <img src={textIcon} className={styles.cardTextImage} alt=""/>
+        <div className={styles.cardTextImageContainer}>
+            <img src={textIcon} className={styles.cardTextImage} alt=""/>
+        </div>
     )}
     else{
         return(

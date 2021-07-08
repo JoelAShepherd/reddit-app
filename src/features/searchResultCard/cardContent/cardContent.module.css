@@ -9,3 +9,8 @@
     height: 50px;
     width: auto;
 }
+
+.cardTextImageContainer {
+    display: flex;
+    align-items: center
+}
