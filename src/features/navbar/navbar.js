@@ -1,4 +1,4 @@
-import redditLogo from './redditLogo.png';
+import redditLogo from '../../images/redditLogo.png';
 import styles from './navbar.module.css'
 
 

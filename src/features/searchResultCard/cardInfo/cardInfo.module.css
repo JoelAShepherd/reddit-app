@@ -1,0 +1,23 @@
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.subRedContainer {
+    display: flex;
+    padding: 2px;
+}
+
+.subRedContainer p {
+    margin: 0;
+}
+
+.subRedIcon {
+    height: 20px;
+}
+
+.titleContainer {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
