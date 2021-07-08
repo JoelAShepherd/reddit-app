@@ -19,19 +19,30 @@ export const Content = props => {
         is_text = true
     }
 
-    const src = data.is_video ? data.thumbnail : is_gif ? 
-                data.preview.images[0].variants.gif.source.url : data.url;
-
+    let src; 
+    if (data.is_video) {
+        src = data.thumbnail
+    } else if (is_gif){
+        try {
+            src = data.preview.images[0].variants.gif.source.url
+        } catch {
+            src = data.thumbnail
+        }
+    } else {
+        src = data.url
+    }
 
     if (is_text){
     return(
-        <img src={textIcon} className={styles.cardImage}/>
+        <img src={textIcon} className={styles.cardImage} alt=""/>
     )}
     else{
         return(
             <img className={styles.cardImage} 
             src={src}
-            onError={(e) => e.target.style.display = "none"}/> 
+            onError={(e) => e.target.style.display = "none"}
+            alt={data.title}
+            /> 
         )
     }
 }
