@@ -7,8 +7,11 @@ export const Ratings = (props) => {
 
     let thisRating = props.rating;
 
-    if (thisRating > 999) {
+    if (thisRating > 999 && thisRating < 100000) {
         thisRating = (thisRating/1000).toFixed(1)
+        thisRating = `${thisRating}k`
+    } else if ( thisRating > 99999){
+        thisRating = (thisRating/1000).toFixed(0)
         thisRating = `${thisRating}k`
     }
 

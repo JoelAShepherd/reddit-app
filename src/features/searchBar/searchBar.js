@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
     history.push('/searchResults')
     dispatch(updateSearchTerm(searchTerm))
     dispatch(searchThunk(searchTerm))
-
+    
     setSearchTerm('')
 }
 

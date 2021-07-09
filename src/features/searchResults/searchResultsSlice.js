@@ -22,7 +22,7 @@ export const searchResultsSlice = createSlice({
     },
     reducers: {},
     extraReducers: {
-        [searchThunk.pending]: (state, action) => {
+        [searchThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
         },
@@ -32,7 +32,7 @@ export const searchResultsSlice = createSlice({
             state.resultsError = false;
             state.data = true
         },
-        [searchThunk.rejected]: (state, action) => {
+        [searchThunk.rejected]: (state) => {
             state.resultsLoading = false;
             state.resultsError = true;
         }

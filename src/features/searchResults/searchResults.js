@@ -3,35 +3,54 @@ import { SearchResultCard } from '../searchResultCard/searchResultCard'
 import { selectSearchResults, selectSearchResultState } from './searchResultsSlice'
 import { selectSearchTerm } from '../searchBar/searchBarSlice'
 import { useSelector } from 'react-redux'
+import { selectHomepageData, selectHomepageState } from '../homepage/homepageSlice';
 
 export const SearchResults = (props) => {
 
+    const type = props.type
+
     const searchTerm = useSelector(selectSearchTerm)
-    const searchResultsData = useSelector(selectSearchResults)
-    const searchResultsState = useSelector(selectSearchResultState)
-    const error = searchResultsState.resultsError;
-    const loading = searchResultsState.resultsLoading;
-    const hasData = searchResultsState.data;
+    let dataSelector, stateSelector
 
+    if (type === "search"){
+        stateSelector = selectSearchResultState;
+        dataSelector = selectSearchResults
+    }
 
-    return (
-        <div className={styles.searchResultsContainer}>
-            {hasData &&
-                <div className={styles.searchHeader}>
-                    <h2>{searchTerm}</h2>
-                    <p>search results</p>
-                </div>
-            }
-            {hasData ? 
-                (searchResultsData.map((card, index) => 
-                <SearchResultCard 
-                key={index} 
-                card_data={card}
-                />)) : 
-                    loading ? (<h3>Loading...</h3>) : error? (<h3>Hmmm.... an error occured</h3>) : <h3>Welcome</h3>
-            }
-        </div>
+    if (type === "home"){
+        stateSelector = selectHomepageState;
+        dataSelector = selectHomepageData;
+    }
+
+    
+    const data = useSelector(dataSelector)
+    const state = useSelector(stateSelector)
+        
+
+        const error = state.resultsError;
+        const loading = state.resultsLoading;
+        const hasData = state.data;
+    
+        return (
+            <div className={styles.searchResultsContainer}>
+                {(type === "search") && hasData &&
+                    <div className={styles.searchHeader}>
+                        <h2>{searchTerm}</h2>
+                        <p>search results</p>
+                    </div>
+                }
+                {hasData ? 
+                    (data.map((card, index) => 
+                    <SearchResultCard 
+                    key={index} 
+                    card_data={card}
+                    />)) : 
+                        loading ? (<h3>Loading...</h3>) : error? (<h3>Hmmm.... an error occured</h3>) : <h3>Welcome</h3>
+                }
+            </div>
     )
+
+    
 }
 
 /* 
