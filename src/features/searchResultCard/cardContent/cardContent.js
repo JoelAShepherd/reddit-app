@@ -1,5 +1,6 @@
 import textIcon from '../../../images/text.png'
 import styles from './cardContent.module.css';
+import { Link } from 'react-router-dom'
 
 
 export const Content = props => {
@@ -35,7 +36,9 @@ export const Content = props => {
     if (is_text){
     return(
         <div className={styles.cardTextImageContainer}>
-            <img src={textIcon} className={styles.cardTextImage} alt=""/>
+            
+                <img src={textIcon} className={styles.cardTextImage} alt=""/>
+            
         </div>
     )}
     else{
