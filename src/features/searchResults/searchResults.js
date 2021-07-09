@@ -4,6 +4,7 @@ import { selectSearchResults, selectSearchResultState } from './searchResultsSli
 import { selectSearchTerm } from '../searchBar/searchBarSlice'
 import { useSelector } from 'react-redux'
 import { selectHomepageData, selectHomepageState } from '../homepage/homepageSlice';
+import { selectSubredditData, selectSubredditState } from '../subreddit/subredditSlice'
 
 export const SearchResults = (props) => {
 
@@ -20,6 +21,11 @@ export const SearchResults = (props) => {
     if (type === "home"){
         stateSelector = selectHomepageState;
         dataSelector = selectHomepageData;
+    }
+
+    if (type === "sub"){
+        stateSelector = selectSubredditState;
+        dataSelector = selectSubredditData
     }
 
     

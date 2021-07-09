@@ -26,5 +26,19 @@ export const reddit = {
         } catch(error) {
             console.log(error)
         }
+    },
+    async getSubreddit(sub) {
+        try {
+            const response = await fetch(`https://www.reddit.com/r/${sub}.json`)
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                const children = jsonResponse.data.children.map(child => child.data)
+                return children;
+            }
+            throw new Error('Reuqest Failed');
+        } catch(error) {
+            console.log(error)
+        
+        }
     }
 }

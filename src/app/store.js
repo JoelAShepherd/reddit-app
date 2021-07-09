@@ -3,6 +3,7 @@ import searchBar from '../features/searchBar/searchBarSlice'
 import searchResults from '../features/searchResults/searchResultsSlice'
 import postCard from '../features/postCard/postCardSlice'
 import homepage from '../features/homepage/homepageSlice';
+import subreddit from '../features/subreddit/subredditSlice'
 
 
 
@@ -12,6 +13,7 @@ export const store = configureStore({
     searchBar: searchBar,
     searchResults: searchResults,
     postCard: postCard,
-    homepage: homepage
+    homepage: homepage,
+    subreddit: subreddit
   },
 });
