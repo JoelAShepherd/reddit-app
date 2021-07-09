@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { postThunk, selectPostData, selectPostState } from './postSlice';
+import { useSelector } from 'react-redux';
+import { selectPostData, selectPostState } from './postSlice';
 
 
-export const PostCard = props => {
+export const Post = props => {
     
-    const dispatch = useDispatch()
-    dispatch(postThunk(link))
+    
     const data = useSelector(selectPostData)
     const state = useSelector(selectPostState)
 

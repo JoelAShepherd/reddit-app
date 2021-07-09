@@ -6,6 +6,7 @@ import { SearchResults } from './features/searchResults/searchResults'
 import { Navbar } from './features/navbar/navbar';
 import { Homepage } from './features/homepage/homepage';
 import { Subreddit } from './features/subreddit/subreddit';
+import { Post } from './features/post/post'
 
 import './App.css';
 
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/sub">
           <Subreddit />
+        </Route>
+        <Route path="/post">
+          <Post />
         </Route>
       </Switch>
       </div>
