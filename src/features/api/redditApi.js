@@ -46,7 +46,7 @@ export const reddit = {
             const response = await fetch(`https://www.reddit.com${link}.json`)
             if (response.ok) {
                 const jsonResponse = await response.json();
-                const children = jsonResponse.data.children.map(child => child.data)
+                const children = jsonResponse[0].data.children.map(child => child.data)
                 return children;
             }
             throw new Error('Reuqest Failed');

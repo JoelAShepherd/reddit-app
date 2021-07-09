@@ -14,7 +14,13 @@ export const Post = props => {
 
     return(
         <div>
-            <p>post card</p>
+            <h3>Test</h3>
+            {has_data ? 
+            (<h2>{data.title}</h2>)
+            : loading ? (<h3>Loading...</h3>) : error && (<h3>Hmmm.... an error occured</h3>)
+            }
         </div>
     )
 }
+
+//TODO: clear unused state on navigating away
