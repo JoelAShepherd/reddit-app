@@ -1,6 +1,7 @@
 import textIcon from '../../../images/text.png'
 import styles from './cardContent.module.css';
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
+
 import { useDispatch } from 'react-redux';
 import { postThunk } from '../../post/postSlice';
 
@@ -38,28 +39,42 @@ export const Content = props => {
         src = data.url
     }
 
-    const handleClick = (e) => {
-        console.log('handleclick')
+    const handleClick = () => {
         dispatch(postThunk(postLink))
-        history.push("/post")
     }
 
     if (is_text){
         return(
-            
+            <Link to='/post' onClick={handleClick}>
+                <div className={styles.cardTextImageContainer}>
+                    <img src={textIcon} className={styles.cardTextImage} alt=""/>
+                </div> 
+            </Link>
+        )
+    }
+
+    else{
+        return(
+            <Link to='/post' onClick={handleClick}>
+                <img className={styles.cardImage} 
+                src={src}
+                onError={(e) => e.target.style.display = "none"}
+                alt={data.title}
+                /> 
+            </Link>
+        )
+    }
+}
+
+/*
+
+if (is_text){
+        return(
+
             <div className={styles.cardTextImageContainer} onClick={handleClick}>
                     <img src={textIcon} className={styles.cardTextImage} alt=""/>
             </div> 
         )
     }
 
-    else{
-        return(
-            <img className={styles.cardImage} 
-            src={src}
-            onError={(e) => e.target.style.display = "none"}
-            alt={data.title}
-            /> 
-        )
-    }
-}
+*/
