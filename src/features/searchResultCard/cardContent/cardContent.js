@@ -1,6 +1,6 @@
 import textIcon from '../../../images/text.png'
 import styles from './cardContent.module.css';
-import { useHistory, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux';
 import { postThunk } from '../../post/postSlice';
@@ -11,7 +11,7 @@ export const Content = props => {
     const data = props.data
     const postLink = props.link
     const dispatch = useDispatch();
-    const history = useHistory();
+    
 
     let is_gif;
     try { if(data.preview.reddit_video_preview.is_gif) {

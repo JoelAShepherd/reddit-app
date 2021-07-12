@@ -2,7 +2,16 @@ import styles from './cardInfo.module.css'
 import redditLogo from '../../../images/redditLogo.png'
 import { Link } from 'react-router-dom'
 
+import { useDispatch } from 'react-redux';
+import { postThunk } from '../../post/postSlice';
+
 export const CardInfo = props => {
+    const dispatch = useDispatch();
+    const postLink = props.link
+
+    const handleClick = () => {
+        dispatch(postThunk(postLink))
+    }
 
     return(
         <div className={styles.infoContainer}> 
@@ -13,7 +22,9 @@ export const CardInfo = props => {
                 </Link>
             </div>
             <div className={styles.titleContainer}>
-                <h2>{props.title}</h2>
+                <Link to='/post' onClick={handleClick}>
+                    <h2>{props.title}</h2>
+                </Link>
             </div>
         </div>
     )

@@ -1,1 +1,4 @@
 <img src={post.url} onError={(e) => e.target.style.display = "none"} />
+
+
+https://www.reddit.com/r/aww/comments/nl9zjj/parrots_consider_this_guy_with_a_blue_hat_as_one/
