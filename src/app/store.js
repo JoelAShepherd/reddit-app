@@ -4,6 +4,7 @@ import searchResults from '../features/searchResults/searchResultsSlice'
 import post from '../features/post/postSlice'
 import homepage from '../features/homepage/homepageSlice';
 import subreddit from '../features/subreddit/subredditSlice'
+import comments from '../features/post/postComments/commentsSlice'
 
 
 
@@ -14,6 +15,7 @@ export const store = configureStore({
     searchResults: searchResults,
     post: post,
     homepage: homepage,
-    subreddit: subreddit
+    subreddit: subreddit,
+    comments: comments
   },
 });

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux';
 import { postThunk } from '../../post/postSlice';
+import { commentsThunk } from '../../post/postComments/commentsSlice';
 
 export const CardInfo = props => {
     const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export const CardInfo = props => {
 
     const handleClick = () => {
         dispatch(postThunk(postLink))
+        dispatch(commentsThunk(postLink))
     }
 
     return(
@@ -30,3 +32,5 @@ export const CardInfo = props => {
     )
 }
 
+//TODO reduce the getting of post data into a single action, differentiate the ino
+//from it further down stream

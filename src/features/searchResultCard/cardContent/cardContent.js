@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux';
 import { postThunk } from '../../post/postSlice';
+import { commentsThunk } from '../../post/postComments/commentsSlice';
 
 
 export const Content = props => {
@@ -41,6 +42,7 @@ export const Content = props => {
 
     const handleClick = () => {
         dispatch(postThunk(postLink))
+        dispatch(commentsThunk(postLink))
     }
 
     if (is_text){
