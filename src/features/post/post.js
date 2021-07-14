@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 import { selectPostData, selectPostState } from './postSlice';
 import { PostContent } from './postContent/postContent';
 import { PostComments } from './postComments/postComments';
+import { decode } from '../../tools/decode'
 
 
 export const Post = props => {
-    
     
     const data = useSelector(selectPostData)
     const state = useSelector(selectPostState)
@@ -16,10 +16,9 @@ export const Post = props => {
 
     return(
         <div>
-            <h3>Test</h3>
             {has_data ? 
             (<div>
-                <h2>{data.title}</h2>
+                <h2>{decode(data.title)}</h2>
                 <PostContent />
                 <PostComments />
             </div>

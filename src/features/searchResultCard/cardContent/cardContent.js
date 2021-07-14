@@ -14,14 +14,6 @@ export const Content = props => {
     const dispatch = useDispatch();
     
 
-    let is_gif;
-    try { if(data.preview.reddit_video_preview.is_gif) {
-        is_gif = true
-    } }
-    catch {
-        is_gif = false
-    }
-
     let is_text = false
     if (data.selftext){
         is_text = true

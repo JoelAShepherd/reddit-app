@@ -4,7 +4,6 @@ import redditLogo from '../../../../images/redditLogo.png';
 
 export const Comment = (props) => {
     const replies = props.data.replies
-    console.log(replies)
 
     if (!props.body) {
         return (
@@ -23,7 +22,7 @@ export const Comment = (props) => {
                 <div>
                     <p className={styles.commentBody}>{props.body}</p>
                     {replies && replies.data.children.map(reply => 
-                        <Comment body={reply.data.body} data={reply.data} key={reply.data.id} depth={props.depth + 1}/>
+                        <Comment body={reply.data.body} data={reply.data} key={reply.data.id} />
                         )}
                 </div>
             </div>
