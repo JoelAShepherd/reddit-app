@@ -12,19 +12,15 @@ export const Comment = (props) => {
         )
     }
 
-    const barStyle = {
-        "width": "5px !important"
-    }
-
     return (
-        <div className={styles.commentContainer} >
-            <div className={styles.bqBar} ></div>
-            <div>
-                <div className={styles.authorContainer}>
-                    <img className={styles.commentAuthorImg} src={redditLogo} alt=""/>
-                    <p className={styles.authorName}>{props.data.author}</p>
-                </div>
-                <div className={styles.innerContainer}>
+        <div className={styles.commentContainer}>
+            <div className={styles.authorContainer}>
+                <img className={styles.commentAuthorImg} src={redditLogo} alt=""/>
+                <p className={styles.authorName}>{props.data.author}</p>
+            </div>
+            <div className={styles.innerContainer}>
+                <div className={styles.bqBar} ></div>
+                <div>
                     <p className={styles.commentBody}>{props.body}</p>
                     {replies && replies.data.children.map(reply => 
                         <Comment body={reply.data.body} data={reply.data} key={reply.data.id} depth={props.depth + 1}/>

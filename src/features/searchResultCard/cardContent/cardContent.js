@@ -27,18 +27,8 @@ export const Content = props => {
         is_text = true
     }
 
-    let src; 
-    if (data.is_video) {
-        src = data.thumbnail
-    } else if (is_gif){
-        try {
-            src = data.preview.images[0].variants.gif.source.url
-        } catch {
-            src = data.thumbnail
-        }
-    } else {
-        src = data.url
-    }
+    const src = data.thumbnail
+    
 
     const handleClick = () => {
         dispatch(postThunk(postLink))
@@ -47,17 +37,15 @@ export const Content = props => {
 
     if (is_text){
         return(
-            <Link to='/post' onClick={handleClick}>
-                <div className={styles.cardTextImageContainer}>
-                    <img src={textIcon} className={styles.cardTextImage} alt=""/>
-                </div> 
+            <Link to='/post' onClick={handleClick} className={styles.cardTextImageContainer}>
+                <img src={textIcon} className={styles.cardTextImage} alt=""/>
             </Link>
         )
     }
 
     else{
         return(
-            <Link to='/post' onClick={handleClick}>
+            <Link to='/post' onClick={handleClick} className={styles.cardImageContainer}>
                 <img className={styles.cardImage} 
                 src={src}
                 onError={(e) => e.target.style.display = "none"}
@@ -77,6 +65,21 @@ if (is_text){
                     <img src={textIcon} className={styles.cardTextImage} alt=""/>
             </div> 
         )
+    }
+
+
+
+
+if (data.is_video) {
+        src = data.thumbnail
+    } else if (is_gif){
+        try {
+            src = data.preview.images[0].variants.gif.source.url
+        } catch {
+            src = data.thumbnail
+        }
+    } else {
+        src = data.url
     }
 
 */
