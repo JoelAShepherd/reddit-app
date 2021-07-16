@@ -12,5 +12,6 @@
 
 .cardTextImageContainer, .cardImageContainer {
     display: flex;
-    align-items: center
+    align-items: center;
+    padding-bottom: 1em;
 }

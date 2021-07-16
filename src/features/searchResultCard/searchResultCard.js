@@ -1,6 +1,7 @@
 import styles from './searchResultCard.module.css';
 import { Ratings } from './ratings/ratings'
 import { Content } from './cardContent/cardContent';
+import { Subreddit } from './subreddit/subreddit';
 import { CardInfo } from './cardInfo/cardInfo';
 
 export const SearchResultCard = (props) => {
@@ -21,11 +22,14 @@ export const SearchResultCard = (props) => {
 
     return (
         <div className={styles.srContainer} style={style}>
-            <div className={styles.srContentContainer}>
                 <Ratings rating={rating}/>
-                <Content data={data} link={clippedLink}/>
-            </div>
-            <CardInfo title={title} subreddit={subreddit} link={clippedLink}/>
+                <div>
+                    <Subreddit subreddit={subreddit}/>
+                    <div className={styles.srContentContainer}>
+                        <Content data={data} link={clippedLink}/>
+                        <CardInfo title={title}  link={clippedLink}/>
+                    </div>
+                </div>
         </div>
     )
 }

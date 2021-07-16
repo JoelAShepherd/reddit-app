@@ -1,0 +1,12 @@
+.subRedContainer {
+    display: flex;
+    padding: 2px;
+}
+
+.subRedContainer p {
+    margin: 0;
+}
+
+.subRedIcon {
+    height: 20px;
+}
