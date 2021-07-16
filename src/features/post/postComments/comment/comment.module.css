@@ -1,7 +1,7 @@
 .commentContainer {
     padding-left: 8px;
-    background-color: rgba(213, 238, 197, 0.5);
     max-width: 99vw;
+    border-radius: 8px;
 }
 
 .bqBar {
