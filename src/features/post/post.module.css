@@ -1,0 +1,19 @@
+.redditLogo {
+    height: 35px;
+}
+
+.authorContainer{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.authorName{
+    margin: 0;
+}
+
+.postTitle{
+   margin: 0;
+}

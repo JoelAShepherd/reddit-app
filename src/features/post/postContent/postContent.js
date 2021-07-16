@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux"
 import { selectPostData } from "../postSlice";
+import { parseMD } from "../../../tools/markdown";
+import { Markup } from 'interweave'
 import styles from './postContent.module.css'
 
 export const PostContent = () => {
@@ -38,7 +40,7 @@ export const PostContent = () => {
         
         return (
             <div>
-                               
+                <Markup content={parseMD(data.selftext)} />   
             </div>
         )
     }

@@ -36,6 +36,8 @@ export const SearchResults = (props) => {
         const error = state.resultsError;
         const loading = state.resultsLoading;
         const hasData = state.data;
+
+        const initialHue = Math.floor(Math.random()*360)
     
         return (
             <div className={styles.searchResultsContainer}>
@@ -48,7 +50,9 @@ export const SearchResults = (props) => {
                 {hasData ? 
                     (data.map((card, index) => 
                     <SearchResultCard 
-                    key={index} 
+                    key={index}
+                    initHue={initialHue}
+                    count={index} 
                     card_data={card}
                     />)) : 
                         loading ? (<h3>Loading...</h3>) : error? (<h3>Hmmm.... an error occured</h3>) : <h3>Welcome</h3>

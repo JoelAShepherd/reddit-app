@@ -1,6 +1,6 @@
 import styles from './comment.module.css'
 import redditLogo from '../../../../images/redditLogo.png';
-import { Parser, HtmlRenderer } from 'commonmark'
+import { parseMD } from '../../../../tools/markdown';
 import { Markup } from 'interweave'
 
 
@@ -21,11 +21,6 @@ export const Comment = (props) => {
         )
     }
 
-    const reader = new Parser();
-    const writer = new HtmlRenderer();
-    const parsed = reader.parse(props.body);
-    const result = writer.render(parsed);
-    
 
     return (
         <div className={styles.commentContainer} style={style}>
@@ -36,7 +31,7 @@ export const Comment = (props) => {
             <div className={styles.innerContainer}>
                 <div className={styles.bqBar} ></div>
                 <div>
-                    <Markup content={result} />
+                    <Markup content={parseMD(props.body)} />
                     {replies && replies.data.children.map(reply => 
                         <Comment body={reply.data.body} data={reply.data} key={reply.data.id} depth={props.depth + 1}/>
                         )}

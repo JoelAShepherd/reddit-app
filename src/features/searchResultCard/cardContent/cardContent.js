@@ -1,4 +1,4 @@
-import textIcon from '../../../images/text.png'
+import textIcon from '../../../images/text-icon.jpg'
 import styles from './cardContent.module.css';
 import { Link } from 'react-router-dom'
 

@@ -3,6 +3,8 @@ import { selectPostData, selectPostState } from './postSlice';
 import { PostContent } from './postContent/postContent';
 import { PostComments } from './postComments/postComments';
 import { decode } from '../../tools/decode'
+import styles from './post.module.css'
+import redditLogo from '../../images/redditLogo.png';
 
 
 export const Post = props => {
@@ -18,7 +20,11 @@ export const Post = props => {
         <div>
             {has_data ? 
             (<div>
-                <h2>{decode(data.title)}</h2>
+                <div className={styles.authorContainer}>
+                    <img src={redditLogo} alt="" className={styles.redditLogo}/>
+                    <h4 className={styles.authorName}>{data.author}</h4>
+                </div>
+                <h2 className={styles.postTitle}>{decode(data.title)}</h2>
                 <PostContent />
                 <PostComments />
             </div>
