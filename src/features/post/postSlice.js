@@ -30,6 +30,7 @@ export const postSlice = createSlice({
         [postThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
+            state.data = false
         },
         [postThunk.fulfilled]: (state, action) => {
             state.postData = action.payload;

@@ -24,6 +24,7 @@ export const commentsSlice = createSlice({
         [commentsThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
+            state.data = false
         },
         [commentsThunk.fulfilled]: (state, action) => {
             state.commentsData = action.payload;

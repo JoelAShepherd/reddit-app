@@ -27,6 +27,7 @@ export const subredditSlice = createSlice({
         [subredditThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
+            state.data = false
         },
         [subredditThunk.fulfilled]: (state, action) => {
             state.subredditData = action.payload;

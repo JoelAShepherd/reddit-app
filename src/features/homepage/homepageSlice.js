@@ -22,6 +22,7 @@ export const homepageSlice = createSlice({
         [homepageLoadThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
+            state.data = false;
         },
         [homepageLoadThunk.fulfilled]: (state, action) => {
             state.homepageResults = action.payload;

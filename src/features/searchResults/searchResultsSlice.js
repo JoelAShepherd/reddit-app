@@ -25,6 +25,7 @@ export const searchResultsSlice = createSlice({
         [searchThunk.pending]: (state) => {
             state.resultsLoading = true;
             state.resultsError = false;
+            state.data = false
         },
         [searchThunk.fulfilled]: (state, action) => {
             state.searchResults = action.payload;
