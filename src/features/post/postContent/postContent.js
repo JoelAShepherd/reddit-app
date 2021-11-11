@@ -19,7 +19,7 @@ export const PostContent = () => {
                 allow={'autoplay unmute'} 
                 mute={'false'}
                 className={styles.video}
-            
+                title={data.title}
             />
         )
     }
