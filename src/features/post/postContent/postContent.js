@@ -30,7 +30,7 @@ export const PostContent = () => {
         const decUri = decodeURI(encUri)
         
         return (
-            <iframe src={decUri} />
+            <iframe src={decUri} title={data.title}/>
         )
     }   
 

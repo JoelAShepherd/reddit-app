@@ -6,7 +6,7 @@ export const Subreddit = (props) => {
 
     return(
         <div className={styles.subRedContainer}>
-            <img src={redditLogo} className={styles.subRedIcon} />
+            <img src={redditLogo} className={styles.subRedIcon} alt="reddit image"/>
             <Link to={`/sub?name=${props.subreddit}`}>
                 <p>r/{props.subreddit}</p>
             </Link>
