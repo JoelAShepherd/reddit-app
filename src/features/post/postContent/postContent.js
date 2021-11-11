@@ -45,16 +45,21 @@ export const PostContent = () => {
         )
     }
 
-
+    if (data.url_overridden_by_dest){
+        return (
+            <div>
+                <img src={data.url_overridden_by_dest} 
+                alt={data.title} 
+                className={styles.img}
+                onError={(e) => {e.target.onError=null; e.target.src=data.thumbnail}}    />
+            </div>
+        )
+    }
 
     
 
     return(
         <div>
-            <img src={data.url_overridden_by_dest} 
-            alt={data.title} 
-            className={styles.img}
-            onError={(e) => {e.target.onError=null; e.target.src=data.thumbnail}}    />
         </div>
     )
 }

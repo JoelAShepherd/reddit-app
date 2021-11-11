@@ -7,11 +7,11 @@ import { Markup } from 'interweave'
 export const Comment = (props) => {
     const replies = props.data.replies
 
-    let lightness = 90 - (8*props.depth)
-    if (lightness < 50){
-        lightness = 50;
+    let lightness = 92 - (5*props.depth)
+    if (lightness < 65){
+        lightness = 65;
     }
-    let hue = 83 + (15 * props.depth)
+    let hue = 83 + (15 * props.depth) % 360;
     
     const style = { backgroundColor: `hsl(${hue}, 100%, ${lightness}%)`}
 

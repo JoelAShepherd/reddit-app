@@ -1,19 +1,19 @@
 import React from 'react';
-import { getByTestId, render } from '@testing-library/react';
+import { getByTestId, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 
 
-test('renders the main div', () => {
-  const root = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+describe('App', () => {
+  test('renders app component', () => {
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    screen.debug();
+  })
+})
 
-  const parentDiv = root.getByTestId("parent-div")
 
-  expect(parentDiv).toBeInTheDocument();
-  
-});

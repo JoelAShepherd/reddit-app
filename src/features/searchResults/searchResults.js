@@ -63,17 +63,3 @@ export const SearchResults = (props) => {
     
 }
 
-/* 
-
-searchResultsData.map((card, index) => 
-                <SearchResultCard key={index} title={card.title} rating={card.ups} src={card.preview.images.resolutions[3].url} />
-
-
-                title={card.title} 
-                rating={card.ups} 
-                is_video={card.is_video}
-                imgSrc={card.url}
-                thumbnail={card.thumbnail}
-                is_gif={card.preview.reddit_video_preview.is_gif ? true : false}
-
-*/

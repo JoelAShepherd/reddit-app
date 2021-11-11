@@ -7,7 +7,7 @@ import styles from './post.module.css'
 import redditLogo from '../../images/redditLogo.png';
 
 
-export const Post = props => {
+export const Post = () => {
     
     const data = useSelector(selectPostData)
     const state = useSelector(selectPostState)

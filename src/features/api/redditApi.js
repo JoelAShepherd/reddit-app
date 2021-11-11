@@ -1,6 +1,8 @@
 
 
 export const reddit = {
+
+    //access reddit for search results to query
     async getSearch(query) {
         try {
             const response = await fetch(`https://www.reddit.com/search.json?q=${query}&limit=15`)
@@ -14,6 +16,8 @@ export const reddit = {
             console.log(error)
         }
     },
+
+    //access reddit api for homepage data
     async getHomepage() {
         try {
             const response = await fetch(`https://www.reddit.com/best.json`)
@@ -27,6 +31,8 @@ export const reddit = {
             console.log(error)
         }
     },
+
+    //get subreddit data from reddit api
     async getSubreddit(sub) {
         try {
             const response = await fetch(`https://www.reddit.com/r/${sub}.json`)
@@ -41,6 +47,8 @@ export const reddit = {
         
         }
     },
+
+    //get post data from reddit api
     async getPost(link) {
         try {
             const response = await fetch(`https://www.reddit.com${link}.json`)
@@ -55,6 +63,8 @@ export const reddit = {
         
         }
     },
+
+    //get comments data for a post from the reddit api
     async getComments(link) {
         try {
             const response = await fetch(`https://www.reddit.com${link}.json`)

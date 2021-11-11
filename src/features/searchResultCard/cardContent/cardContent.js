@@ -48,30 +48,3 @@ export const Content = props => {
     }
 }
 
-/*
-
-if (is_text){
-        return(
-
-            <div className={styles.cardTextImageContainer} onClick={handleClick}>
-                    <img src={textIcon} className={styles.cardTextImage} alt=""/>
-            </div> 
-        )
-    }
-
-
-
-
-if (data.is_video) {
-        src = data.thumbnail
-    } else if (is_gif){
-        try {
-            src = data.preview.images[0].variants.gif.source.url
-        } catch {
-            src = data.thumbnail
-        }
-    } else {
-        src = data.url
-    }
-
-*/
